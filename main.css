@@ -3,8 +3,8 @@ body {
 	padding: 0;
 	font-family: Arial, sans-serif;
 	background: #121212;
-	width: 100vw;
-	height: 100vh;
+	min-height: 100vh; /* allow content to grow on mobile */
+	width: auto;
 }
 
 
@@ -15,7 +15,9 @@ blog {
 	box-shadow: -5px 6px 8px rgba(0, 0, 0, 0.4);
 	border-radius: 10px;
 	display: block;
-	width: 50%;
+	width: 60%; 
+	max-width: 900px;
+	min-width: 300px;
 
 	/* Loop the background image (media/pencil.png) make the image really small */
 	/* background-image: url('media/pencil.png');
@@ -36,9 +38,9 @@ blog {
 
 blog > header {
 	background: #1e1e1eee;
-	padding: 20px;
+	padding: 18px;
 	border-radius: 7px;
-	font-size: 2.0em;
+	font-size: 1.6em; 
 	color: #eee;
 }
 
@@ -55,11 +57,11 @@ blog > entries > entry {
 	color: #eee;
 }
 blog > entries > entry > date {
-	font-size: 1.0em;
+	font-size: 0.95em;
 	color: #888;
 }
 blog > entries > entry > info {
-	font-size: 1.5em;
+	font-size: 1.25em;
 	margin-left: 8px;
 }
 blog > entries > entry > content {
@@ -68,7 +70,7 @@ blog > entries > entry > content {
 	gap: 10px;
 }
 blog > entries > entry > content > img {
-	width: 35%;
+	width: 48%;
 	height: auto;
 	border-radius: 5px;
 }
@@ -150,6 +152,47 @@ blog > entries > entry > content > img {
 }
 .lightbox-next {
 	right: -80px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 900px) {
+	blog {
+		width: 90%;
+		margin: 18px auto;
+		padding: 14px;
+	}
+
+	blog > header {
+		font-size: 1.35em;
+		padding: 12px;
+	}
+
+	blog > entries {
+		gap: 12px;
+	}
+
+	blog > entries > entry {
+		padding: 12px;
+	}
+
+	/* Stack images vertically on small screens */
+	blog > entries > entry > content {
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	blog > entries > entry > content > img {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	blog > entries > entry > info {
+		font-size: 1.25em;
+	}
+
+	blog > entries > entry > date {
+		font-size: 0.95em;
+	}
 }
 
 @media (max-width: 700px) {
