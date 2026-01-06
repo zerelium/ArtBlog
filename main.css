@@ -195,7 +195,7 @@ blog > entries > entry > content > img {
 	}
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
 	.lightbox-arrow { width: 44px; height: 60px; font-size: 28px; }
 	.lightbox-prev { left: 8px; }
 	.lightbox-next { right: 8px; }
